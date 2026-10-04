@@ -1,0 +1,22 @@
+n1 = int(input("Gib die erste natürliche Zahl an."))
+n2 = int(input("Gib die zweite natülriche Zahl an."))
+
+if n1 <=0 or n2<=0:
+    print("Beide Zahlen müssen größer als 0 sein.")
+
+elif n1>n2:
+    groß, klein = n1, n2
+
+else: 
+
+    groß, klein = n2, n1
+
+if groß % klein == 0:
+   print(f"{klein} ist ein Teiler von {groß}.")
+
+else:
+   print(f"{klein} ist kein Teiler von {groß}.")
+
+
+
+

@@ -1,0 +1,58 @@
+import random 
+    
+
+def spiele_schere_stein_papier(user_wurf): 
+    throw_computer=random.randint(1,3)
+
+    if throw_computer == user_wurf:
+        return 0
+    elif throw_computer == 1 and user_wurf == 2:
+        return 1
+    elif throw_computer == 1 and user_wurf == 3:
+        return -1
+    elif throw_computer == 2 and user_wurf == 1:
+        return -1
+    elif throw_computer == 2 and user_wurf == 3:
+        return 1
+    elif throw_computer == 3 and user_wurf == 1:
+        return 1
+    elif throw_computer == 3 and user_wurf == 2:
+        return -1
+    else:
+        print("Ungültige Eingabe")
+        return None
+
+
+punkte_user = 0
+punkte_computer = 0
+
+
+for runde in range(3):
+    print(f"\nRunde {runde+1}:")
+    throw_user = int(input("Schere(1),Stein(2), Papier(3):"))
+    ergebnis = spiele_schere_stein_papier(throw_user)
+
+    if ergebnis == 1:
+        punkte_user =1
+        print("Du gewinnst diese Runde!")
+
+    elif ergebnis == -1:
+        punkte_computer =1
+        print("Computer gewinnt diese Runde!")
+   
+    elif ergebnis == 0:
+        print("Unentschieden!")
+    
+    else: 
+        print("Ungültige Eingabe!")
+
+
+print(f"\n--Spielende--\nPunkte: User {punkte_user} - Computer {punkte_computer}")
+if punkte_user>punkte_computer:
+    print("Du bist Gesamtsieger!")
+elif punkte_user<punkte_computer:
+    print("Computer gewinnt das Spiel!")
+else:
+    print("Das Spiel endet unentschieden!")
+    
+
